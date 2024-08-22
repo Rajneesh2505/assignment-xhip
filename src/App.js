@@ -20,7 +20,6 @@ postdata.splice(e,1)
 setPostData([...postdata])
   }
   const updatePost=(e)=>{
-    console.log("post is",e)
     let newItem=postdata.splice(e.id,1,e)
 setPostData([...postdata])
   }
