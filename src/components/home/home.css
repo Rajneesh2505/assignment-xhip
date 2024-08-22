@@ -1,6 +1,4 @@
-/* nav{
-    height:6em;
-} */
+
 .navbar{
     background-color:rgb(0,20,64,.96) !important;
 }
@@ -26,6 +24,32 @@
 .container-md>button{
     margin:0 .2em
 }
-.container-md{
+.container-sm{
     display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width:500px) {
+    .post-container{
+        display: grid;
+        grid-template-rows: repeat(4,1fr);
+        grid-template-columns: repeat(2,1fr);
+        column-gap:1em;
+        row-gap: .5em;
+        margin:2em auto
+    } 
+    .d-inline-block{
+        height:2vh;
+        width:6vw
+    } 
+}
+@media screen and (max-width:290px) {
+    .post-container{
+        display: grid;
+        grid-template-rows: repeat(4,1fr);
+        grid-template-columns: repeat(1,1fr);
+        column-gap:1em;
+        row-gap: .5em;
+        margin:2em auto
+    }  
 }

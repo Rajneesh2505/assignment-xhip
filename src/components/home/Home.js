@@ -35,24 +35,23 @@ export const Home=({postdata,createPost,deletePost,updatePost})=>{
     </div>
   </div>
 </nav>
-<div>{postdata.length}</div>
-{isAuthenticated?<CreatePost createPost={createPost}/>:<button type="button" onClick={() => loginWithRedirect()} class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+{isAuthenticated?<CreatePost createPost={createPost}/>:<button type="button" onClick={() =>loginWithRedirect()}  class="btn btn-primary"  data-bs-target="#exampleModal">
  Create New Post
 </button>}
         <div className="container post-container">
-        {postdata.map((post)=>{
+        {postdata.map((post,idx)=>{
             return (
-                <Fragment key={post.id}>
+                <Fragment key={idx}>
                <div class="card text-bg-light mb-3 border-secondary shadow">
   <div class="card-body">
     <h4>{post.body}</h4>
   <p>{post.userId}</p>
   <p>{post.title}</p>
-  <div  class="container-md">
- {isAuthenticated?<UpdatePost data={post.id} postdata={postdata} updatePost={updatePost}/>:<button type="button" onClick={() => loginWithRedirect()} class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <div  class="container-sm">
+ {isAuthenticated?<UpdatePost idx={post.id} postdata={postdata} updatePost={updatePost}/>:<button type="button" onClick={() => loginWithRedirect()} class="btn btn-primary"  data-bs-target="#exampleModal">
  Update
 </button>}
-  {isAuthenticated?<DeletePost idx={post.id} deletePost={deletePost}/>:<button type="button" onClick={() => loginWithRedirect()} class="btn btn-danger" data-bs-toggle="modal">
+  {isAuthenticated?<DeletePost idx={post.id} deletePost={deletePost}/>:<button type="button" onClick={() => loginWithRedirect()} class="btn btn-danger" >
  Delete
 </button>}
   </div>
